@@ -1,1 +1,190 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+body {
+    background-color: rgb(14 15 17 / 1);
+}
+.border-opacity-30 {
+  border-color: rgba(17, 24, 39, 0.3); /* gris foncé avec 30% d’opacité */
+}
+
+.bg-gradient-radial-dark {
+  background-image: radial-gradient(72.20% 78.49% at 49.87% 50.10%, rgba(71, 80, 98, 0.26) 0%, rgba(137, 137, 137, 0.00) 100%);
+}
+
+.bg-gradient-radial-dark-light {
+  background-image: radial-gradient(80.63% 80.22% at 52.97% 50.00%, rgba(71, 80, 98, 0.46) 0%, rgba(137, 137, 137, 0.00) 100%);
+}
+
+.rounded-5xl {
+  border-radius: 1.875rem;
+}
+
+.tracking-2xl {
+  letter-spacing: -0.48px;
+}
+
+.tracking-7xl {
+  letter-spacing: -1.86px;
+}
+
+.tracking-8xl {
+  letter-spacing: -3.6px;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.026em;
+}
+
+@keyframes glowPulsePremium {
+  0%, 100% {
+    text-shadow: 0 0 8px #BEF264, 0 0 16px #BEF264, 0 0 24px #BEF264;
+  }
+  50% {
+    text-shadow: 0 0 10px #BEF264, 0 0 20px #BEF264, 0 0 30px #BEF264;
+  }
+}
+
+.text-glow-animate-premium {
+  animation: glowPulsePremium 2s ease-in-out infinite;
+}
+.text-glow-light {
+  text-shadow: 0 0 3px #BEF264, 0 0 6px #BEF264;
+}
+
+/* Optionnel : légère animation pulsée */
+@keyframes glowPulseLight {
+  0%, 100% { text-shadow: 0 0 3px #BEF264, 0 0 6px #BEF264; }
+  50% { text-shadow: 0 0 4px #BEF264, 0 0 8px #BEF264; }
+}
+
+.text-glow-animate-light {
+  animation: glowPulseLight 2s ease-in-out infinite;
+}
+/* ========================
+   Fonts
+======================== */
+@theme {
+  --font-sans: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-heading: Figtree, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ========================
+   Colors
+======================== */
+@theme {
+  /* Basic */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Pink */
+  --color-pink-50: #fdf2f8; --color-pink-100: #fce7f3; --color-pink-200: #fbcfe8; --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6; --color-pink-500: #ec4899; --color-pink-600: #db2777; --color-pink-700: #be185d;
+  --color-pink-800: #9d174d; --color-pink-900: #831843; --color-pink-950: #500724;
+
+  /* Gray */
+  --color-gray-50: #F5FAF9; --color-gray-100: #EDF2F1; --color-gray-200: #D9DEDD; --color-gray-300: #C7CFCD;
+  --color-gray-400: #AEB5B4; --color-gray-500: #929C9A; --color-gray-600: #7F8786; --color-gray-700: #646A69;
+  --color-gray-800: #4C524F; --color-gray-900: #1D1F1E;
+
+  /* Lime */
+  --color-lime-50: #F7FEE7; --color-lime-100: #ECFCCB; --color-lime-200: #D9F99D; --color-lime-300: #BEF264;
+  --color-lime-400: #A3E635; --color-lime-500: #BEF264; --color-lime-600: #65A30D; --color-lime-700: #4D7C0F;
+  --color-lime-800: #365314; --color-lime-900: #1A2E05;
+
+  /* Teal */
+  --color-teal-50: #ECFDF5; --color-teal-100: #D1FAE5; --color-teal-200: #A7F3D0; --color-teal-300: #6EE7B7;
+  --color-teal-400: #34D399; --color-teal-500: #10B981; --color-teal-600: #059669; --color-teal-700: #065F46;
+  --color-teal-800: #064E3B; --color-teal-900: #022C22;
+
+  /* Red */
+  --color-red-50: #FEF2F2; --color-red-100: #FEE2E2; --color-red-200: #FECACA; --color-red-300: #FCA5A5;
+  --color-red-400: #F87171; --color-red-500: #EF4444; --color-red-600: #DC2626; --color-red-700: #B91C1C;
+  --color-red-800: #991B1B; --color-red-900: #7F1D1D;
+
+  /* Orange */
+  --color-orange-50: #FFF7ED; --color-orange-100: #FFEDD5; --color-orange-200: #FED7AA; --color-orange-300: #FDBA74;
+  --color-orange-400: #FB923C; --color-orange-500: #F97316; --color-orange-600: #EA580C; --color-orange-700: #C2410C;
+  --color-orange-800: #9A3412; --color-orange-900: #7C2D12;
+
+  /* Green */
+  --color-green-50: #F0FDF4; --color-green-100: #DCFCE7; --color-green-200: #BBF7D0; --color-green-300: #86EFAC;
+  --color-green-400: #4ADE80; --color-green-500: #22C55E; --color-green-600: #16A34A; --color-green-700: #15803D;
+  --color-green-800: #166534; --color-green-900: #14532D;
+
+  /* Blue */
+  --color-blue-50: #EFF6FF; --color-blue-100: #DBEAFE; --color-blue-200: #BFDBFE; --color-blue-300: #93C5FD;
+  --color-blue-400: #60A5FA; --color-blue-500: #3B82F6; --color-blue-600: #2563EB; --color-blue-700: #1D4ED8;
+  --color-blue-800: #1E40AF; --color-blue-900: #1E3A8A;
+}
+
+/* ========================
+   Spacing (rem et px)
+======================== */
+@theme {
+  --spacing-0: 0px; --spacing-0-5: 0.125rem; --spacing-1: 0.25rem; --spacing-1-5: 0.375rem; --spacing-2: 0.5rem;
+  --spacing-2-5: 0.625rem; --spacing-3: 0.75rem; --spacing-3-5: 0.875rem; --spacing-4: 1rem; --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem; --spacing-7: 1.75rem; --spacing-8: 2rem; --spacing-9: 2.25rem; --spacing-10: 2.5rem;
+  --spacing-11: 2.75rem; --spacing-12: 3rem; --spacing-14: 3.5rem; --spacing-16: 4rem; --spacing-18: 4.5rem;
+  --spacing-20: 5rem; --spacing-24: 6rem; --spacing-27: 6.75rem; --spacing-28: 7rem; --spacing-32: 8rem;
+  --spacing-34: 8.5rem; --spacing-36: 9rem; --spacing-40: 10rem; --spacing-44: 11rem; --spacing-48: 12rem;
+  --spacing-52: 13rem; --spacing-56: 14rem; --spacing-60: 15rem; --spacing-62: 15.5rem; --spacing-64: 16rem;
+  --spacing-72: 18rem; --spacing-74: 18.5rem; --spacing-80: 20rem; --spacing-87: 21.75rem; --spacing-96: 24rem;
+  --spacing-100: 25rem; --spacing-112: 28rem; --spacing-116: 29rem; --spacing-128: 32rem; --spacing-135: 33.75rem;
+  --spacing-148: 37rem; --spacing-160: 40rem; --spacing-170: 42.5rem; --spacing-186: 46.5rem; --spacing-235: 58.75rem;
+  --spacing-470: 117.5rem;
+}
+
+/* ========================
+   Border Radius
+======================== */
+@theme {
+  --rounded-none: 0px; --rounded-sm: 0.125rem; --rounded: 0.25rem; --rounded-md: 0.375rem;
+  --rounded-lg: 0.5rem; --rounded-xl: 0.75rem; --rounded-2xl: 1rem; --rounded-3xl: 1.25rem; --rounded-4xl: 1.875rem;
+  --rounded-5xl: 5rem; --rounded-full: 9999px;
+}
+
+/* ========================
+   Keyframes / Animations
+======================== */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes spinStar { to { transform: rotate(360deg); } }
+@keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+@keyframes pulse { 50% { opacity: .5; } }
+@keyframes bounce {
+  0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+  50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
+}
+
+@theme {
+  --animate-none: none;
+  --animate-spin: spin 1s linear infinite;
+  --animate-spinSlow: spinSlow 6s linear infinite;
+  --animate-spinStar: spinStar 16s linear infinite;
+  --animate-ping: ping 1s cubic-bezier(0,0,0.2,1) infinite;
+  --animate-pulse: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite;
+  --animate-bounce: bounce 1s infinite;
+}
+
+/* ========================
+   Breakpoints
+======================== */
+@theme {
+  --screen-xs: 480px; --screen-sm: 640px; --screen-md: 768px; --screen-lg: 1024px; --screen-xl: 1216px;
+}
+
+/* ========================
+   Additional utilities: opacity, z-index, width/height, translate, inset
+   (à adapter selon besoin)
+======================== */
+
+@media (max-width: 768px) {
+  .contact-bg {
+    object-position: top left; /* décaler la partie visible vers le haut gauche */
+  }
+}

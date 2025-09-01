@@ -1,0 +1,119 @@
+<div class="bg-lime-500 text-black">
+  <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center py-2 text-center">
+    <!-- Email -->
+    <div class="mb-1 md:mb-0">
+      📧 <a href="mailto:contact&#64;monagence.com" class="underline font-medium">contact&#64;monagence.com</a>
+    </div>
+
+    <!-- Phrase au centre, visible uniquement desktop -->
+    <div class="hidden md:block font-semibold text-center absolute left-1/2 transform -translate-x-1/2">
+      ⚡ Réponse garantie sous 24h
+    </div>
+
+    <!-- Téléphone -->
+    <div class="mb-1 md:mb-0">
+      📞 <a href="tel:+33123456789" class="underline font-medium">+33 1 23 45 67 89</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Header + Hero -->
+<div class="relative min-h-screen">
+  <!-- Background waves -->
+  <img class="absolute top-0 left-0 w-full h-full" src="assets/images/bg-waves.png" alt="">
+  
+  <!-- Navigation -->
+  <nav class="py-6">
+    <div class="container mx-auto px-4">
+      <div class="relative flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="inline-block">
+          <img class="h-8" src="assets/images/logo-white.svg" alt="">
+        </a>
+
+        <!-- Menu desktop -->
+        <ul class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex">
+          <li class="mr-8"><a class="inline-block text-white hover:text-lime-500 font-medium cursor-pointer" routerLink="/about">About us</a></li>
+          <li class="mr-8"><a class="inline-block text-white hover:text-lime-500 font-medium cursor-pointer" routerLink="/pricing">Pricing</a></li>
+          <li class="mr-8"><a class="inline-block text-white hover:text-lime-500 font-medium cursor-pointer" routerLink="/contact">Contact us</a></li>
+          <li><a class="inline-block text-white hover:text-lime-500 font-medium cursor-pointer" routerLink="/blog">Blog</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end cursor-pointer">
+          <div class="hidden md:block">
+            <a routerLink="/contact" class="inline-flex group py-2.5 px-4 items-center justify-center text-sm font-medium text-white hover:text-teal-900 border border-white hover:bg-white rounded-full transition duration-200">
+              <span class="mr-2">Get in touch</span>
+              <span class="transform group-hover:translate-x-0.5 transition-transform duration-200">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.75 10H15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10 4.75L15.25 10L10 15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <!-- Mobile nav button -->
+          <button (click)="mobileNavOpen = !mobileNavOpen" class="md:hidden text-white hover:text-lime-500">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.19995 23.2H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.19995 16H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.19995 8.79999H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="relative pt-30 pb-24 sm:pb-32 lg:pt-36 lg:pb-62 text-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-lg xl:max-w-xl mx-auto text-center">
+        <h1 class="text-5xl xs:text-7xl xl:text-8xl tracking-tight text-lime-500 mb-8 text-glow-animate-premium">
+          IEK Studio
+        </h1>
+
+
+        <p class="max-w-md xl:max-w-none text-lg text-white opacity-80 mb-10">
+          Our commitment to green energy is paving the way for a cleaner, healthier planet. Join us on a journey towards a future where clean, renewable energy sources transform the way we power our lives.
+        </p>
+        <a href="#" class="inline-flex py-4 px-6 items-center justify-center text-lg font-medium text-teal-900 border border-lime-500 hover:border-white bg-lime-500 hover:bg-white rounded-full transition duration-200">
+          See our solutions
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="mobileNavOpen" class="    fixed top-0 left-0 bottom-0 w-full xs:w-5/6 xs:max-w-md z-50">
+    <div (click)="mobileNavOpen = false" class="fixed inset-0 bg-violet-900 opacity-20"></div>
+    <nav class="relative flex flex-col py-7 px-10 w-full h-full bg-white overflow-y-auto">
+      <div class="flex items-center justify-between">
+        <a href="#" class="inline-block">
+          <img class="h-8" src="assets/images/logo-white.svg" alt="">
+        </a>
+        <button (click)="mobileNavOpen = false">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.2 8.79999L8.80005 23.2M8.80005 8.79999L23.2 23.2" stroke="#1D1F1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <ul class="pt-20 pb-12 mb-auto flex flex-col">
+        <li class="mb-6"><a class="text-teal-900 hover:text-teal-700 font-medium" routerLink="/about">About us</a></li>
+        <li class="mb-6"><a class="text-teal-900 hover:text-teal-700 font-medium" routerLink="/pricing">Pricing</a></li>
+        <li class="mb-6"><a class="text-teal-900 hover:text-teal-700 font-medium" routerLink="/contact">Contact us</a></li>
+        <li><a class="text-teal-900 hover:text-teal-700 font-medium" routerLink="/blog">Blog</a></li>
+      </ul>
+
+      <div class="flex items-center justify-between">
+        <a href="#" class="inline-flex items-center text-lg font-medium text-teal-900">
+          <span>Newsletter</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+
