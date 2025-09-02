@@ -59,8 +59,14 @@ body {
   50% { text-shadow: 0 0 4px #BEF264, 0 0 8px #BEF264; }
 }
 
+
 .text-glow-animate-light {
   animation: glowPulseLight 2s ease-in-out infinite;
+}
+
+.glow-soft {
+  color: #000; /* texte noir */
+  text-shadow: 0 0 2px #ffffff80, 0 0 4px #ffffff60, 0 0 6px #ffffff40;
 }
 /* ========================
    Fonts
