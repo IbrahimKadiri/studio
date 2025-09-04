@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { animateSection } from '../shared/animations';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,7 +10,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit {
  projects = [
     {
       title: 'Site e-commerce moderne',
@@ -31,4 +32,12 @@ export class PortfolioComponent {
     },
     // Ajouter d’autres projets facilement ici
   ];
+
+  @ViewChild('portfolioSection', { static: true }) portfolioSection!: ElementRef;
+
+  ngAfterViewInit() {
+    const section = this.portfolioSection.nativeElement;
+    animateSection(section);
+    
+  }
 }

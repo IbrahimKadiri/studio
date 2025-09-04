@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import gsap from 'gsap';
+import { animateSection, initLogo } from '../shared/animations';
 
 @Component({
   selector: 'app-stack',
@@ -32,26 +32,15 @@ export class StackComponent {
     { name: 'AWS', src: 'assets/icons/aws.svg' }
   ];
 
+  @ViewChild('stackSection', { static: true }) stackSection!: ElementRef;
   @ViewChild('marqueeContainer') marqueeContainer!: ElementRef;
   @ViewChild('marqueeContent') marqueeContent!: ElementRef;
 
   ngAfterViewInit(): void {
-    this.initMarquee();
+    const section = this.stackSection.nativeElement;
+    animateSection(section);
+    initLogo(this.marqueeContainer, this.marqueeContent);
   }
 
-  initMarquee() {
-    const container = this.marqueeContainer.nativeElement;
-    const content = this.marqueeContent.nativeElement;
-
-    const totalWidth = content.offsetWidth;
-
-    gsap.to(container.children, {
-      x: -totalWidth,
-      duration: 8,
-      ease: 'sine.inOut',
-      repeat: -1,
-      yoyo: true,
-    });
-  }
-
+  
 }

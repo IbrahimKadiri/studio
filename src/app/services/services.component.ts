@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { animateSection, fadeLeft } from '../shared/animations';
 
 @Component({
   selector: 'app-services',
@@ -9,11 +10,11 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
-  active = 'vitrine';
+  active = 1;
 
   menuItems = [
     {
-      id: 'vitrine',
+      id: 1,
       label: 'Sites vitrines',
       title: 'Création de sites vitrines',
       description:
@@ -22,7 +23,7 @@ export class ServicesComponent {
       ctaText: 'Demander un devis',
     },
     {
-      id: 'ecommerce',
+      id: 2,
       label: 'E-commerce',
       title: 'Boutiques en ligne',
       description:
@@ -31,7 +32,7 @@ export class ServicesComponent {
       ctaText: 'Lancer ma boutique',
     },
     {
-      id: 'seo',
+      id: 3,
       label: 'SEO',
       title: 'Optimisation SEO & visibilité locale',
       description:
@@ -40,7 +41,7 @@ export class ServicesComponent {
       ctaText: 'Améliorer ma visibilité',
     },
     {
-      id: 'maintenance',
+      id: 4,
       label: 'Maintenance',
       title: 'Maintenance & accompagnement',
       description:
@@ -49,7 +50,7 @@ export class ServicesComponent {
       ctaText: 'Protéger mon site',
     },
     {
-      id: 'branding',
+      id: 5,
       label: 'Branding',
       title: 'Identité visuelle & branding',
       description:
@@ -58,4 +59,24 @@ export class ServicesComponent {
       ctaText: 'Créer mon identité',
     },
   ];
+
+  @ViewChild('servicesSection', { static: true }) servicesSection!: ElementRef;
+  @ViewChildren('cards') cards!: QueryList<ElementRef>;
+
+  ngAfterViewInit() {
+    const section = this.servicesSection.nativeElement;
+    animateSection(section);
+    
+  }
+ 
+  selectMenu(itemId: number) {
+    setTimeout(() => {
+      const cardEl = this.cards.first?.nativeElement;
+      if (cardEl) {
+       fadeLeft(cardEl);
+      }
+    });
+    this.active = itemId;
+  }
+  
 }

@@ -1,4 +1,4 @@
-<section class="relative py-24 bg-lime-500 overflow-hidden" >
+<section #stackSection class="relative py-24 bg-lime-500 overflow-hidden" >
   <div class="container mx-auto px-4 text-center" style="
         background-image: 
         url('assets/images/lines3.svg');
@@ -7,26 +7,33 @@
      ">
     <!-- Header -->
     <div class="max-w-3xl mx-auto mb-12">
-      <span class="inline-block mb-4 text-2xl text-black font-medium tracking-tighter">Nos technologies</span>
+      <span class="inline-block mb-4 text-2xl text-black font-medium tracking-tighter glow-black">Nos technologies</span>
       <h2 class="font-heading text-4xl lg:text-6xl text-black tracking-tighter-xl mb-4">
-        Une <span class="bg-black text-lime-500 rounded-lg px-2 italic font-semibold">expertise</span> solide.
+        Une <span class="big-word bg-black text-lime-500 rounded-lg px-2 italic font-semibold">expertise</span> solide.
       </h2>
       <p class="text-lg text-black font-medium italic">
-        Nous utilisons un ensemble de technologies <span class="bg-black/90 text-[#BEF264] rounded-lg px-2 italic font-semibold">modernes</span> pour concevoir et développer des solutions <span class="bg-black/90 text-lime-500 rounded-lg px-2 italic font-semibold">performantes, robustes</span> et parfaitement adaptées à vos besoins.
+        Nous utilisons un ensemble de technologies <span class="big-word bg-black/90 text-[#BEF264] rounded-lg px-2 italic font-semibold">modernes</span> pour concevoir et développer des solutions <span class="big-word bg-black/90 text-lime-500 rounded-lg px-2 italic font-semibold">performantes, robustes</span> et parfaitement adaptées à vos besoins.
       </p>
     </div>
 
     <!-- Marquee / Logos -->
-    <div #marqueeContainer class="overflow-hidden relative w-full">
-      <div #marqueeContent class="flex gap-6 md:gap-12 items-center justify-start">
-        <div *ngFor="let logo of logos" class="flex-shrink-0 w-20 md:w-28 hover:scale-105 transition-transform duration-300">
-          <img 
-            [src]="logo.src" 
-            [alt]="logo.name" 
-            class="w-full h-auto transition duration-300"
-          />
-        </div>
-      </div>
+<div #marqueeContainer class="card overflow-hidden relative w-full">
+  <div
+    #marqueeContent
+    class="flex w-max gap-8 md:gap-12 items-center justify-start will-change-transform"
+  >
+    <div
+      *ngFor="let logo of logos"
+      class="flex-shrink-0 w-24 md:w-32 lg:w-36 hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        [src]="logo.src"
+        [alt]="logo.name"
+        class="w-full h-auto transition duration-300"
+      />
     </div>
+  </div>
+</div>
+
   </div>
 </section>

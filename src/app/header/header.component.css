@@ -1,0 +1,23 @@
+/* Glitch pseudo-éléments */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch::before {
+  top: 2px;
+  left: 2px;
+  color: black;
+  clip: rect(0, 100%, 40%, 0);
+}
+
+.glitch::after {
+  top: -2px;
+  left: -2px;
+  color: black;
+  clip: rect(60%, 100%, 100%, 0);
+}
