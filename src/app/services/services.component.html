@@ -1,4 +1,4 @@
-<section #servicesSection class="relative py-24 overflow-hidden">
+<section #servicesSection class="relative py-24">
   <div class="container px-4 mx-auto">
     <!-- Header -->
     <div class="mb-12 md:max-w-4xl text-center mx-auto">
@@ -29,8 +29,8 @@
 
     <!-- Cards -->
     <div *ngFor="let service of menuItems">
-      <div  *ngIf="active === service.id" #cards class="card relative mb-10 py-20 px-16 bg-gradient-radial-dark overflow-hidden border border-gray-900 border-opacity-30 rounded-5xl aos-init aos-animate" data-aos="fade-up">
-        <img class="absolute bottom-0 left-0" src="assets/images/bg-gray.png" alt="">
+      <div  *ngIf="active === service.id" #cards class="card relative mb-10 py-20 px-16 bg-gradient-radial-dark border border-gray-900 border-opacity-30 rounded-5xl">
+        <img class="absolute bottom-0 left-0" src="assets/images/bg-gray.png" alt="background gray">
 
         <div class="max-w-6xl mx-auto">
           <div class="relative z-10 flex flex-wrap items-center -m-8">

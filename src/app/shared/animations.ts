@@ -1,5 +1,4 @@
 // src/app/shared/animations.ts
-import { ElementRef } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -244,20 +243,35 @@ export const fadeUpButton = (element: HTMLElement, duration = 1, delay = 0) => {
   });
 };
 
-export const initLogo = (logoContainer: ElementRef, logoContent: ElementRef) => {
+/**
+ * Yoyo horizontal marquee pour logos ou éléments similaires.
+ * @param container ElementRef du container principal
+ * @param content ElementRef du contenu à animer
+ * @param duration Durée de l'animation en secondes
+ */
+export const initLogo = (container: any, content: any, duration = 13) => {
+  if (!container || !content) return;
 
-    const container = logoContainer.nativeElement;
-    const content = logoContent.nativeElement;
+  // attendre que le contenu ait une largeur définie
+  const runAnimation = () => {
+    const containerEl = container.nativeElement;
+    const contentEl = content.nativeElement;
 
-    const containerWidth = container.offsetWidth;
-    const contentWidth = content.scrollWidth;
-    const distance = contentWidth - containerWidth; 
+    const containerWidth = containerEl.offsetWidth;
+    const contentWidth = contentEl.scrollWidth;
+    const distance = contentWidth - containerWidth;
 
-    gsap.to(content, {
+    if (distance <= 0) return; // rien à animer si le contenu est plus petit que le container
+
+    gsap.to(contentEl, {
       x: -distance,
-      duration: 13,
+      duration,
       ease: 'sine.inOut',
       repeat: -1,
       yoyo: true,
     });
+  };
+
+  // Si le DOM n’est pas encore rendu, on attend un tick Angular
+  setTimeout(runAnimation, 0);
 };
