@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { animateSection, fadeLeft } from '../shared/animations';
 
 @Component({
@@ -9,7 +9,7 @@ import { animateSection, fadeLeft } from '../shared/animations';
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
-export class ServicesComponent {
+export class ServicesComponent implements AfterViewInit {
   active = 1;
 
   menuItems = [

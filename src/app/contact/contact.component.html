@@ -47,6 +47,19 @@
             </button>
           </div>
         </form>
+          
+        <!-- Toast -->
+        <div *ngIf="toastMessage"
+            [ngClass]="{
+              'bg-green-500': toastType==='success',
+              'bg-red-500': toastType==='error',
+              'bg-yellow-400': toastType==='warning'
+            }"
+            class="fixed top-4 right-4 text-white px-4 py-2 rounded shadow-lg transform transition duration-300 ease-in-out animate-pulse"
+            [class.opacity-0]="!toastMessage"
+            [class.opacity-100]="toastMessage">
+          {{ toastMessage }}
+        </div>
       </div>
 
       <!-- Map + Infos -->

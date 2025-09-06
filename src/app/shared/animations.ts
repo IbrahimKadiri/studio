@@ -46,7 +46,7 @@ export const fadeDown = (element: any, duration = 1, delay = 0) => {
 /** Fade + Left */
 export const fadeLeft = (element: any, duration = 3, delay = 0) => {
   if (!element) return;
-
+  ScrollTrigger.refresh();
   gsap.from(element, {
     x: isMobile ? -30 : -50,
     opacity: 0,
