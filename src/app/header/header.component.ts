@@ -3,6 +3,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import { fadeUpButton, fadeUpWords} from '../shared/animations';
+import { menuItems } from '../shared/data';
 
 gsap.registerPlugin(ScrambleTextPlugin);
 @Component({
@@ -14,7 +15,7 @@ gsap.registerPlugin(ScrambleTextPlugin);
 })
 export class HeaderComponent {
   mobileNavOpen = false;
-
+  menuItems = menuItems;
   @ViewChild('ctaButton') ctaButton!: ElementRef;
   @ViewChild('heroTitle') heroTitle!: ElementRef;
 
@@ -48,5 +49,13 @@ export class HeaderComponent {
     fadeUpWords(words); // animation des mots surlignés
 
     fadeUpButton(this.ctaButton.nativeElement); // animation du bouton
+  }
+
+  scrollToSection(id: string) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    this.mobileNavOpen = false; // ferme le menu
   }
 }
