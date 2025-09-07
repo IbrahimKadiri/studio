@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { animateSection } from '../shared/animations';
 import { catchError, Observable } from 'rxjs';
@@ -12,16 +12,37 @@ import { CommonModule } from '@angular/common';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent implements OnInit, AfterViewInit {
   toastMessage = '';
   toastType: 'success' | 'error' | 'warning' = 'success';
 
   constructor(private _http: HttpClient) {}
-   @ViewChild('contactSection', { static: true }) contactSection!: ElementRef;
+  @ViewChild('contactSection', { static: true }) contactSection!: ElementRef;
+
+  consentGiven: boolean | null = null;
+  
+  ngOnInit() {
+    const storedConsent = localStorage.getItem('cookieConsent');
+    if (storedConsent !== null) {
+      this.consentGiven = storedConsent === 'true';
+    }
+    
+    console.log('consentGiven', this.consentGiven)
+  }
 
   ngAfterViewInit(): void {
     const section = this.contactSection.nativeElement;
     animateSection(section);
+  }
+
+  acceptCookies() {
+    localStorage.setItem('cookieConsent', 'true');
+    this.consentGiven = true;
+  }
+
+  declineCookies() {
+    localStorage.setItem('cookieConsent', 'false');
+    this.consentGiven = false;
   }
   
    // Fonction de soumission du formulaire

@@ -42,10 +42,10 @@ body {
 
 @keyframes glowPulsePremium {
   0%, 100% {
-    text-shadow: 0 0 8px #BEF264, 0 0 16px #BEF264, 0 0 24px #BEF264;
+    text-shadow: 0 0 8px #3B82F6, 0 0 16px #3B82F6, 0 0 24px #3B82F6;
   }
   50% {
-    text-shadow: 0 0 10px #BEF264, 0 0 20px #BEF264, 0 0 30px #BEF264;
+    text-shadow: 0 0 10px #3B82F6, 0 0 20px #3B82F6, 0 0 30px #3B82F6;
   }
 }
 
@@ -53,13 +53,13 @@ body {
   animation: glowPulsePremium 2s ease-in-out infinite;
 }
 .text-glow-light {
-  text-shadow: 0 0 3px #BEF264, 0 0 6px #BEF264;
+  text-shadow: 0 0 3px #3B82F6, 0 0 6px #3B82F6;
 }
 
 /* Optionnel : légère animation pulsée */
 @keyframes glowPulseLight {
-  0%, 100% { text-shadow: 0 0 3px #BEF264, 0 0 6px #BEF264; }
-  50% { text-shadow: 0 0 4px #BEF264, 0 0 8px #BEF264; }
+  0%, 100% { text-shadow: 0 0 3px #3B82F6, 0 0 6px #3B82F6; }
+  50% { text-shadow: 0 0 4px #3B82F6, 0 0 8px #3B82F6; }
 }
 
 
@@ -114,8 +114,8 @@ body {
   --color-gray-800: #4C524F; --color-gray-900: #1D1F1E;
 
   /* Lime */
-  --color-lime-50: #F7FEE7; --color-lime-100: #ECFCCB; --color-lime-200: #D9F99D; --color-lime-300: #BEF264;
-  --color-lime-400: #A3E635; --color-lime-500: #B8E86F; --color-lime-600: #65A30D; --color-lime-700: #4D7C0F;
+  --color-lime-50: #F7FEE7; --color-lime-100: #ECFCCB; --color-lime-200: #BFDBFE; --color-lime-300: #BEF264;
+  --color-lime-400: #60A5FA; --color-lime-500: #60A5FA; --color-lime-600: #65A30D; --color-lime-700: #4D7C0F;
   --color-lime-800: #365314; --color-lime-900: #1A2E05;
 
   /* Teal */

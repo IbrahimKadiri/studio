@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy github": "ng build --configuration production --base-href '/studio/' && npx angular-cli-ghpages --dir=dist/agence-web/browser --branch gh-pages --repo https://github.com/IbrahimKadiri/studio.git"
   },
   "private": true,
   "dependencies": {

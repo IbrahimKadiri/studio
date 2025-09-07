@@ -1,6 +1,6 @@
 <section #contactSection class="relative py-24 overflow-hidden">
   <!-- Background -->
-  <img class="absolute top-0 left-0 w-full h-full object-cover contact-bg z-0" src="assets/images/lines.svg" alt="Background waves"/>
+  <img class="absolute bottom-0 left-0 w-full h-full contact-bg z-0" src="assets/images/blurred-shape.svg" alt="Background waves"/>
 
   <div class="container mx-auto px-4 relative z-10">
     <!-- Header -->
@@ -53,7 +53,18 @@
       <div class="w-full lg:w-1/2 flex flex-col gap-6 h-full">
         <!-- Google Map -->
         <div class="flex-[2] min-h-[300px] bg-gradient-radial-dark rounded-5xl overflow-hidden shadow-md">
-          <iframe
+          <div *ngIf="consentGiven !== true" class="bg-gray-200 flex flex-col sm:flex-row gap-4 items-center justify-center h-[250px] sm:h-[300px] px-6 text-center sm:text-left">
+            <p class="text-sm text-gray-700 max-w-md">
+              Activez les cookies pour afficher la carte Google
+            </p>
+            <button
+              (click)="acceptCookies()"
+              class="px-5 py-2 bg-black text-white font-semibold rounded-full hover:bg-lime-500 hover:text-black transition"
+            >
+              Accepter
+            </button>
+          </div>
+          <iframe *ngIf="consentGiven === true"
             class="w-full min-h-[300px]"
             frameborder="0"
             style="border:0"
@@ -125,4 +136,29 @@
     {{ toastMessage }}
   </div>
 </section>
+<!-- Cookie banner -->
+<div
+  *ngIf="consentGiven === null"
+  class="fixed bottom-0 left-0 w-full bg-lime-500 text-black px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-lg z-50"
+>
+  <!-- Message -->
+  <p class="text-sm text-center sm:text-left font-medium">
+    Ce site utilise des cookies uniquement pour afficher la carte Google Maps.
+  </p>
 
+  <!-- Boutons -->
+  <div class="flex gap-3">
+    <button
+      (click)="acceptCookies()"
+      class="px-4 py-2 bg-black text-white font-semibold rounded-full hover:bg-gray-800 transition"
+    >
+      Accepter
+    </button>
+    <button
+      (click)="declineCookies()"
+      class="px-4 py-2 border border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition"
+    >
+      Refuser
+    </button>
+  </div>
+</div>
