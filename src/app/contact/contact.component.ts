@@ -15,19 +15,17 @@ import { CommonModule } from '@angular/common';
 export class ContactComponent implements OnInit, AfterViewInit {
   toastMessage = '';
   toastType: 'success' | 'error' | 'warning' = 'success';
+  consentGiven: boolean | null = null;
 
-  constructor(private _http: HttpClient) {}
   @ViewChild('contactSection', { static: true }) contactSection!: ElementRef;
 
-  consentGiven: boolean | null = null;
-  
+  constructor(private _http: HttpClient) {}
+
   ngOnInit() {
     const storedConsent = localStorage.getItem('cookieConsent');
     if (storedConsent !== null) {
       this.consentGiven = storedConsent === 'true';
     }
-    
-    console.log('consentGiven', this.consentGiven)
   }
 
   ngAfterViewInit(): void {
@@ -58,16 +56,13 @@ export class ContactComponent implements OnInit, AfterViewInit {
     formToSend.append('lastName', formData.value.lastName);
     formToSend.append('email', formData.value.email);
     formToSend.append('message', formData.value.message);
-    console.log('Message envoyé avec succès!', formToSend);
 
     // Envoi du formulaire via le service
     this.sendMessage(formToSend).subscribe(
       response => {
-        console.log('Message envoyé avec succès!', response, formToSend);
         this.showToast('Message envoyé avec succès !', 'success');
       },
       error => {
-        console.error('Erreur lors de l\'envoi du message:', error);
         this.showToast('Erreur lors de l’envoi. Réessayez.', 'error');
       }
     );

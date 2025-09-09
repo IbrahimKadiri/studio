@@ -4,6 +4,65 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Animation Hero Title BX Code */
+export const animateHeroTitle = () => {
+  const bx = document.querySelector('#heroTitle .bx') as HTMLElement;
+  const code = document.querySelector('#heroTitle .code') as HTMLElement;
+
+  if (!bx || !code) return;
+
+  // --- 1️⃣ BX reveal (fade up letter by letter) ---
+  const bxLetters = bx.textContent!.split('').map(l => `<span class="letter">${l}</span>`).join('');
+  bx.innerHTML = bxLetters;
+  const bxSpans = bx.querySelectorAll('.letter');
+
+  gsap.from(bxSpans, {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+  });
+
+  // --- 2️⃣ Code glitch effect ---
+  const codeLetters = code.textContent!.split('').map(l => `<span class="letter">${l}</span>`).join('');
+  code.innerHTML = codeLetters;
+  const codeSpans = code.querySelectorAll('.letter');
+
+  codeSpans.forEach((span, i) => {
+    gsap.fromTo(span, 
+      { opacity: 0, x: -5, y: 0 },
+      { 
+        opacity: 1,
+        x: 0,
+        y: 0,
+        duration: 0.6,
+        delay: 1 + i * 0.05,
+        ease: 'power2.out',
+        onComplete: () => {
+          // petit glitch aléatoire sur x ou y
+          gsap.to(span, {
+            x: gsap.utils.random(-2, 2),
+            y: gsap.utils.random(-2, 2),
+            repeat: 3,
+            yoyo: true,
+            duration: 0.05,
+          });
+        }
+      }
+    );
+  });
+
+  // --- 3️⃣ Glow subtil sur Code ---
+  gsap.to(code, {
+    textShadow: "0 0 8px #60A5FA, 0 0 12px #60A5FA, 0 0 16px #60A5FA",
+    duration: 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: 'sine.inOut'
+  });
+
+};
 export const initHeroParticles = (canvasId: string, particleCount: number = 50) => {
   const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
   if (!canvas) return;
@@ -370,7 +429,6 @@ export const fadeDown = (element: any, duration = 1, delay = 0) => {
 /** Fade + Left */
 export const fadeLeft = (element: any, duration = 3, delay = 0) => {
   if (!element) return;
-  ScrollTrigger.refresh();
   gsap.from(element, {
     x: isMobile ? -30 : -50,
     opacity: 0,
@@ -480,7 +538,6 @@ export const glowPulse = (element: any, color = '#BEF264', duration = 1.5) => {
 /** Fade Up en cascade pour plusieurs éléments */
 export const fadeUpStagger = (elements: any, duration = 1.5, stagger = 0.2) => {
   if (!elements) return;
-  console.log('fadeUpStagger',elements )
   gsap.from(elements, {
     opacity: 0,
     y: isMobile ? 30 : 60,
@@ -512,6 +569,7 @@ export const highlightWords = (elements: any, duration = 1.5, stagger = 0.6) => 
 export const animateHero = (section: HTMLElement) => {
   if (!section) return;
 
+  animateHeroTitle();
   // Sous-titre
   fadeUp(section.querySelector('p'), 3, 1);
 

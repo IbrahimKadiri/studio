@@ -29,7 +29,7 @@
 
     <!-- Cards -->
     <div *ngFor="let service of menuItems">
-      <div  *ngIf="active === service.id" #cards class="card relative mb-10 py-20 px-16 bg-gradient-radial-dark border border-gray-900 border-opacity-30 rounded-5xl">
+      <div [hidden]="active !== service.id" id="service.id" #cards [attr.data-id]="service.id" class="card relative mb-10 py-20 px-16 bg-gradient-radial-dark border border-gray-900 border-opacity-30 rounded-5xl">
         <img class="absolute bottom-0 left-0" src="assets/images/bg-gray.png" alt="background gray">
 
         <div class="max-w-6xl mx-auto">

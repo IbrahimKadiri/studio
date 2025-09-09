@@ -66,17 +66,18 @@ export class ServicesComponent implements AfterViewInit {
   ngAfterViewInit() {
     const section = this.servicesSection.nativeElement;
     animateSection(section);
-    
   }
  
   selectMenu(itemId: number) {
-    setTimeout(() => {
-      const cardEl = this.cards.first?.nativeElement;
-      if (cardEl) {
-       fadeLeft(cardEl);
-      }
-    });
+    // Si c'est déjà la carte active, on sort
+    if (this.active === itemId) return;
+    
     this.active = itemId;
+    // attendre que la carte soit ajoutée au DOM
+    setTimeout(() => {
+    const cardEl = document.querySelector(`.card[data-id="${itemId}"]`) as HTMLElement;
+    if (cardEl) fadeLeft(cardEl);
+  });
   }
   
 }

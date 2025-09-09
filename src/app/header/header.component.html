@@ -1,28 +1,28 @@
 
 <div #heroSection>
-    <div  class="bg-lime-500 text-black">
-    <!-- Banniere -->
+  <!-- Banniere -->
+  <div  class="bg-lime-500 text-black">
     <div class="container mx-auto px-4 flex justify-center md:justify-between items-center py-2 gap-6">
       
       <!-- WhatsApp -->
-      <a href="https://wa.me/33123456789" target="_blank"
+      <a href="https://wa.me/32485216962" target="_blank"
         class="flex items-center gap-2 text-black active:text-white hover:text-white transition-colors duration-200 animate-pulse">
         <svg xmlns="http://www.w3.org/2000/svg" 
             class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M20.52 3.48A11.76 11.76 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.01L0 24l6.23-1.62A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.82 0-3.6-.49-5.15-1.42l-.37-.21-3.7.96.99-3.61-.24-.37A9.93 9.93 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.07-7.57c-.27-.14-1.6-.79-1.85-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.35-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.45-.46-.61-.47-.16 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.9 2.9 4.61 4.07.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
         </svg>
-        <span class="hidden sm:inline font-medium">WhatsApp</span>
+        <span class="hidden sm:inline font-medium">+32 485 216 962</span>
       </a>
 
       <!-- Mail -->
-      <a href="mailto:contact@monagence.com"
+      <a href="mailto:info@bxcode.com"
         class="flex items-center gap-2 text-black active:text-white hover:text-white transition-colors duration-200 animate-pulse">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" 
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.82 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
         </svg>
-        <span class="hidden sm:inline font-medium">Email</span>
+        <span class="hidden sm:inline font-medium">info&#64;bxcode.com</span>
       </a>
 
     </div>
@@ -30,8 +30,7 @@
 
   <!-- Header + Hero -->
   <div class="relative min-h-screen">
-    <!-- Background waves 
-    <img class="absolute top-center left-0 w-full h-full" src="assets/images/glow-bottom.svg" alt="background waves">-->
+    <!-- Background shape -->
     <img class="absolute top-0 left-0 w-full h-full" src="assets/images/blurred-shape.svg" alt="blurred-shape">
     <img class="absolute top-0 left-0 w-full h-full" src="assets/images/secondary-illustration.svg" alt="background page-illustration">
     <!-- Canvas Particles -->
@@ -42,7 +41,18 @@
         <div class="relative flex items-center justify-between">
           <!-- Logo -->
           <a href="#" class="inline-block">
-            <img class="h-8" src="assets/images/icon/logo.png" alt="">
+            <span class="h-12 text-white">BX <span class="text-lime-500 italic text-glow-animate-premium"> Code</span></span>
+           <!--<img class="h-8" src="assets/images/icon/logo.png" alt="">
+            logo temporaire
+              <svg  class="h-8" xmlns="http://www.w3.org/2000/svg" width="220" height="60" viewBox="0 0 220 60">
+                <text x="0" y="40" font-family="Figtree" font-weight="bold" font-size="28" fill="#60A5FA">&lt;</text>
+
+                <text x="20" y="45" font-family="Figtree" font-weight="bold" font-style="italic" font-size="44" fill="#FFFFFF">BX</text>
+
+                <text x="85" y="40" font-family="Figtree" font-weight="bold" font-size="28" fill="#60A5FA">/&gt;</text>
+              </svg>
+            --> 
+
           </a>
 
           <!-- Menu desktop -->
@@ -52,17 +62,15 @@
               </a>
             </li>
           </ul>
-
-
-            <!-- Mobile nav button -->
-            <button (click)="mobileNavOpen = !mobileNavOpen" class="md:hidden text-white active:text-lime-500 hover:text-lime-500">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.19995 23.2H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.19995 16H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.19995 8.79999H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-
+          
+          <!-- Mobile nav button -->
+          <button (click)="mobileNavOpen = !mobileNavOpen" class="md:hidden text-white active:text-lime-500 hover:text-lime-500">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.19995 23.2H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.19995 16H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.19995 8.79999H26.7999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -70,34 +78,32 @@
     <!-- Hero Content -->
     <div class="hero relative pt-30 pb-24 sm:pb-32 lg:pt-36 lg:pb-62 text-center">
       <div class="container mx-auto px-4">
-        <div class="max-w-lg xl:max-w-xl mx-auto text-center">
-          <h1 #heroTitle class="text-5xl xs:text-7xl xl:text-8xl tracking-tight text-lime-500 mb-8 text-glow-animate-premium">
-            BXL Studio
-          </h1>
-          <p class="max-w-md xl:max-w-none text-lg text-white opacity-80 mb-10 italic">
-            Nous créons des solutions digitales sur mesure pour <span class="word text-glow-animate-light text-lime-500 font-semibold">indépendants</span> et <span class="word text-glow-animate-light text-lime-500 font-semibold">PME.</span> De la conception à la mise en ligne, votre projet est entre de bonnes mains.
-          </p>
-          <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-6">
-  <!-- Bouton Services -->
-  <a href="#services"
-     class="inline-flex py-3 px-6 items-center justify-center text-lg font-medium text-teal-900 border border-lime-500 bg-lime-500 rounded-full transition-colors duration-200 hover:bg-white hover:border-white active:bg-white active:border-white">
-    Voir nos services
-  </a>
+        <h1 id="heroTitle" class="text-6xl xs:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight">
+          <span class="bx px-2">BX</span> <span class="code text-lime-500 italic">Code</span>
+        </h1>
 
-  <!-- Bouton Contact -->
-  <a href="#contact"
-     class="inline-flex py-3 px-6 items-center justify-center text-lg font-medium text-white border border-white bg-transparent rounded-full transition-colors duration-200 hover:bg-white hover:text-teal-900 active:bg-white active:text-teal-900">
-    <span>Contactez-nous</span>
-    <span class="transform group-hover:translate-x-1 transition-transform duration-200">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.75 10H15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M10 4.75L15.25 10L10 15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
-  </a>
-</div>
+        <p class="mt-6 max-w-xl mx-auto text-lg xs:text-xl text-white/80 italic">
+          Nous créons des solutions digitales sur mesure pour <span class="word font-semibold text-[#60A5FA]">indépendants</span> et 
+          <span class="word font-semibold text-[#60A5FA]">PME</span>.
+          De la conception à la mise en ligne, votre projet est entre de bonnes mains.
+        </p>
 
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+          <a href="#services" 
+            class="inline-flex py-4 px-6 md:py-5 md:px-8 items-center justify-center text-lg font-medium text-teal-900 border border-[#60A5FA] bg-[#60A5FA] rounded-full hover:bg-white hover:border-white transition-colors duration-200">
+            Voir nos services
+          </a>
 
+          <a href="#contact" 
+            class="inline-flex py-3 px-5 md:py-4 md:px-6 items-center justify-center text-lg text-white border border-white bg-transparent rounded-full hover:bg-white hover:text-teal-900 transition-colors duration-200 group">
+            <span>Contactez-nous</span>
+            <span class="ml-2 transform group-hover:translate-x-0.5 transition-transform duration-200">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.75 10H15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 4.75L15.25 10L10 15.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -108,7 +114,8 @@
       [ngStyle]="{'background-image': 'url(assets/images/page-illustration.svg)', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'background-position': 'center'}">
         <div class="flex items-center justify-between">
           <a href="#" class="inline-block">
-            <img class="h-8" src="assets/images/logo-white.svg" alt="">
+            <!-- <img class="h-8" src="assets/images/logo-white.svg" alt=""> -->
+             <span class="h-12 text-white">BX <span class="text-lime-500 italic text-glow-animate-premium"> Code</span></span>
           </a>
           <button (click)="mobileNavOpen = false">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,14 +126,48 @@
 
         <ul class="pt-20 pb-12 mb-auto flex flex-col">
           <li *ngFor="let item of menuItems" class="mb-6">
-            <a class="text-white active:text-lime-500 hover:text-lime-500 font-medium" (click)="scrollToSection(item.id)">{{ item.label }}</a>
+            <a class="text-white active:text-lime-500 hover:text-lime-500 font-medium text-glow-animate-light" (click)="scrollToSection(item.id)">{{ item.label }}</a>
           </li>
         </ul>
 
-        <div class="flex items-center justify-between">
-          <a href="#" class="inline-flex items-center text-lg font-medium text-white">
-            <span>Newsletter</span>
-          </a>
+         <!-- Contact + Réseaux -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-lime-500 text-glow-animate-light ">Contact</h4>
+          <ul class="space-y-3 text-gray-300">
+            <li>
+              <a href="mailto:info&#64;bxcode.com" class="hover:text-lime-500 transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-lime-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M22 6 12 13 2 6" /><rect x="2" y="4" width="20" height="16" rx="2"/>
+              </svg>
+                info&#64;bxcode.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+3285216962" class="hover:text-lime-500 transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    class="w-6 h-6 text-lime-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.52 3.48A11.76 11.76 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.01L0 24l6.23-1.62A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.23-3.48-8.52zM12 22c-1.82 0-3.6-.49-5.15-1.42l-.37-.21-3.7.96.99-3.61-.24-.37A9.93 9.93 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.07-7.57c-.27-.14-1.6-.79-1.85-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.35-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.01-.22-.53-.45-.46-.61-.47-.16 0-.34-.02-.52-.02s-.48.07-.73.34c-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.9 2.9 4.61 4.07.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z"/>
+                </svg>
+                +32 485 216 962
+              </a>
+            </li>
+          </ul>
+
+          <!-- Réseaux sociaux -->
+          <div class="flex gap-5 mt-6">
+            <a href="#" class="text-lime-400 hover:text-white transition" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4H14V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="text-lime-400 hover:text-white transition" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="text-lime-400 hover:text-white transition" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37a4 4 0 1 1-7.9 1.28 4 4 0 0 1 7.9-1.28z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
         </div>
       </nav>
     </div>
